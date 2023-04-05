@@ -1,0 +1,10 @@
+
+
+Future Improvements:
+
+- Cross browser testing
+    - All browsers and their drivers need to be downloaded and installed
+    - A common function to be able to specify the browser via command line for the tests to run
+    - headless browsers to improve the speed of the tests
+
+- Linting rules to keep consistent with the test scripts

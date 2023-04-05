@@ -7,24 +7,24 @@ The tests have been setup to run on Chrome Browser, which can be expanded in fut
 ## Requirements:
 
 - `python3`
-- `selenium`
-- `behave`
-- Chrome
-- Chromedriver
+- `Chrome`
+- `Chromedriver`
+
+### Python
+This repository has been created and tested using python 3.11.2
+
+### Chrome
+This repository has been created and tested using Chrome Version 111.0.5563.146 and Chromedriver 111.0.5563.64
+Move the unpacked chromedriver to be in your PATH (https://selenium-python.readthedocs.io/installation.html#drivers)[https://selenium-python.readthedocs.io/installation.html#drivers]
 
 ## Setup
 
 1. Clone the repository
 2. Open the terminal, navigate to the root of the Hudl folder
-3. Run "behave" to run all scenarios within the repo
-4. Alternatively run "behave -n "scenario_name" to run one single scenario
+3. Install dependencies - `pip install -r requirements.txt`
 
-
-- Download and install python3 from "https://www.python.org/downloads/"
-- Pip should be available in the standard library, so use this to install selenium - "pip3 install selenium"
-- Download and install Chrome Browser
-- Download and install Chromedriver from "https://sites.google.com/chromium.org/driver/"
-- Move the unpacked chromedriver to be in your PATH - "mv chromedriver /usr/local/bin"
-- Install behave - "pip3 install behave"
+## Run Tests
+1. Run `behave` to run all scenarios within the repo
+2. Alternatively run `behave -n "scenario_name"` to run one single scenario
 
 
