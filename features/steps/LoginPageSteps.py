@@ -2,13 +2,10 @@ from behave import step
 from locators.LoginPage import LoginPageLocators, LoginPageCopy
 from locators.HomePage import HomePageLocators
 from data.UserData import UserData
-from CommonSteps import (driver, OpenBrowserToURL)
+from CommonSteps import (driver, OpenBrowserToURL, wait)
 from data.Urls import Urls
-
-from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-wait = WebDriverWait(driver, 10)
 
 @step('User is on login page')
 def step_impl(context):
@@ -56,13 +53,11 @@ def step_impl(context):
 def step_impl(context):
     driver.find_element(*LoginPageLocators.REMEMBER_ME_CHECKBOX_LABEL).click()
     checkbox = driver.find_element(*LoginPageLocators.REMEMBER_ME_CHECKBOX)
-
     assert checkbox.is_selected()
     
 @step('User fills in valid credentials')
 def step_impl(context):
     context.execute_steps('''
-    User enters valid email address
-    User enters valid password
-    '''
-    )
+        when User enters valid email address
+        and User enters valid password
+    ''')

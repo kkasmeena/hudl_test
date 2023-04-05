@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.support.wait import WebDriverWait
 
 
 def SetUp():
@@ -10,3 +11,4 @@ def OpenBrowserToURL(url):
 
 driver = SetUp()
 
+wait = WebDriverWait(driver, 10)

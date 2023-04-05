@@ -1,11 +1,8 @@
 from behave import step
 from locators.HomePage import HomePageLocators
 from locators.HudlPage import HudlPageLocators
-from CommonSteps import driver
-from selenium.webdriver.support.wait import WebDriverWait
+from CommonSteps import (driver, wait)
 from selenium.webdriver.support import expected_conditions as EC
-
-wait = WebDriverWait(driver, 10)
 
 @step('User logs out of account')
 def step_impl(context):
