@@ -6,10 +6,8 @@ from CommonSteps import driver
 
 @step('User navigates to login page')
 def step_impl(context):
-    element = driver.find_element(*HudlPageLocators.LOGIN_BUTTON)
-    element.click()
-    element = driver.find_element(*HudlPageLocators.HUDL_LOGIN)
-    element.click()
+    element = driver.find_element(*HudlPageLocators.LOGIN_BUTTON).click()
+    element = driver.find_element(*HudlPageLocators.HUDL_LOGIN).click()
 
 @step('Email address should be auto filled in')
 def step_impl(context):

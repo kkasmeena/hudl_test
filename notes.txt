@@ -8,3 +8,10 @@ Future Improvements:
     - headless browsers to improve the speed of the tests
 
 - Linting rules to keep consistent with the test scripts
+- Auto generated users, with access to the api's we can randomly generate users and sign them up more efficiently, to do the login tests
+- Email and Password to be separated out of the repository
+- Api tests, with access to the api docs, there are plenty of api tests to be implemented
+
+* The Scenario listed below is failing due to a bug, the user's email address should be filled in if remember me is checked, however this functionality is broken.
+This has also been tested manually to confirm.
+User's email is prefilled when remember me is selected

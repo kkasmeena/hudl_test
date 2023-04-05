@@ -1,5 +1,5 @@
 from behave import step
-from locators.LoginPage import LoginPageLocators
+from locators.LoginPage import LoginPageLocators, LoginPageCopy
 from locators.HomePage import HomePageLocators
 from data.UserData import UserData
 from CommonSteps import (driver, OpenBrowserToURL)
@@ -49,13 +49,20 @@ def step_impl(context):
 
 @step('Login error message is displayed')
 def step_impl(context):
-    assert wait.until(EC.text_to_be_present_in_element(LoginPageLocators.LOGIN_ERROR_MESSAGE, LoginPageLocators.LOGIN_ERROR_TEXT))
-    assert driver.find_element(*LoginPageLocators.LOGIN_BUTTON).is_enabled() != True
+    assert wait.until(EC.text_to_be_present_in_element(LoginPageLocators.LOGIN_ERROR_MESSAGE, LoginPageCopy.LOGIN_ERROR_TEXT))
+    assert driver.find_element(*LoginPageLocators.LOGIN_BUTTON).is_enabled() == False
 
 @step('Selects remember me')
 def step_impl(context):
-    element = driver.find_element(*LoginPageLocators.REMEMBER_ME_CHECKBOX).click()
-    #assert element.is_selected()
-    # check that this action has been performed?
-    # Ask Marco   
+    driver.find_element(*LoginPageLocators.REMEMBER_ME_CHECKBOX_LABEL).click()
+    checkbox = driver.find_element(*LoginPageLocators.REMEMBER_ME_CHECKBOX)
 
+    assert checkbox.is_selected()
+    
+@step('User fills in valid credentials')
+def step_impl(context):
+    context.execute_steps('''
+    User enters valid email address
+    User enters valid password
+    '''
+    )

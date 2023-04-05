@@ -29,8 +29,7 @@ Feature: Login page
         Then Login error message is displayed
 
     Scenario: User's email is prefilled when remember me is selected
-        When User enters valid email address
-        And User enters valid password
+        When User fills in valid credentials
         And Selects remember me
         And Clicks Login
         And User is logged in successfully
