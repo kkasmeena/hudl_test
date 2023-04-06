@@ -36,3 +36,9 @@ Feature: Login page
         When User logs out of account
         And User navigates to login page
         Then Email address should be auto filled in
+
+    Scenario: Error is displayed when unregistered user logs in with organisation
+        When User clicks login with an organisation
+        And User enters their email address
+        And Clicks login on organisation page
+        Then Error message is displayed for organisation login

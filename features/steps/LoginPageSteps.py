@@ -52,8 +52,7 @@ def step_impl(context):
 @step('Selects remember me')
 def step_impl(context):
     driver.find_element(*LoginPageLocators.REMEMBER_ME_CHECKBOX_LABEL).click()
-    checkbox = driver.find_element(*LoginPageLocators.REMEMBER_ME_CHECKBOX)
-    assert checkbox.is_selected()
+    assert driver.find_element(*LoginPageLocators.REMEMBER_ME_CHECKBOX).is_selected()
     
 @step('User fills in valid credentials')
 def step_impl(context):
@@ -61,3 +60,11 @@ def step_impl(context):
         when User enters valid email address
         and User enters valid password
     ''')
+
+@step('User clicks login with an organisation')
+def step_impl(context):
+    driver.find_element(*LoginPageLocators.LOGIN_WITH_ORGANISATION_BUTTON).click()
+
+@step('Error message is displayed for organisation login')
+def step_impl(context):
+    assert wait.until(EC.text_to_be_present_in_element(LoginPageLocators.LOGIN_ERROR_MESSAGE, LoginPageCopy.LOGIN_WITH_ORGANISATION_ERROR_TEXT))
