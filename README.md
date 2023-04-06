@@ -29,6 +29,6 @@ Move the unpacked chromedriver to be in your PATH [https://selenium-python.readt
 
 ## Run Tests
 - Run `behave -f html -o behave-report.html` to run all scenarios within the repo and produce a report
-- Alternatively run `behave -n "scenario_name -f html -o behave-report.html"` to run one single scenario
+- Alternatively run `behave -n "scenario_name" -f html -o behave-report.html` to run one single scenario
 
 
